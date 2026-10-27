@@ -1,0 +1,315 @@
+.dispatch-panel {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    /* Adjust as per map centering */
+    transform: translateX(-50%);
+    /* Or maybe left aligned if multiple panels */
+    width: 90%;
+    max-width: 960px;
+    background-color: var(--bg-panel);
+    border-radius: var(--radius-xl);
+    padding: var(--space-6) var(--space-8);
+    box-shadow: var(--shadow-float);
+    z-index: 1000;
+}
+
+.panel-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-6);
+}
+
+.header-actions {
+    display: flex;
+    gap: var(--space-3);
+    align-items: center;
+}
+
+.action-btn {
+    padding: 8px 18px;
+    border-radius: var(--radius-full);
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 1px solid var(--border-subtle);
+}
+
+.action-btn.secondary {
+    background-color: transparent;
+    color: var(--text-primary);
+}
+
+.action-btn.secondary:hover {
+    background-color: var(--bg-app);
+    border-color: var(--color-brand-green);
+    color: var(--color-brand-green);
+}
+
+.user-name-group {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    border-right: 1px solid var(--border-subtle);
+    padding-right: var(--space-4);
+}
+
+.sos-pill {
+    font-size: 0.65rem;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: var(--radius-full);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.sos-pill.sos {
+    background-color: var(--color-brand-red);
+    color: white;
+}
+
+.sos-pill.sos.device-A,
+.sos-pill.sos.device-node-a,
+.sos-pill.sos.device-node_a,
+.sos-pill.sos.device-tower-a,
+.sos-pill.sos.device-tower_a,
+.sos-pill.sos.device-a {
+    background-color: #FFFFFF !important;
+    color: #000000 !important;
+    border: 1px solid var(--border-subtle);
+}
+
+.sos-pill.sos.device-B,
+.sos-pill.sos.device-node-b,
+.sos-pill.sos.device-node_b,
+.sos-pill.sos.device-tower-b,
+.sos-pill.sos.device-tower_b,
+.sos-pill.sos.device-b {
+    background-color: var(--color-brand-red) !important;
+    color: white !important;
+}
+
+.sos-pill.warning {
+    background-color: #FEF3C7;
+    color: #D97706;
+}
+
+.sos-pill.safe {
+    background-color: #DCFCE7;
+    color: #166534;
+}
+
+.vitals-header-group {
+    display: flex;
+    gap: var(--space-3);
+    align-items: center;
+}
+
+.vital-pill {
+    background-color: var(--bg-app);
+    border: 1px solid var(--border-subtle);
+    padding: 6px 14px;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+    transition: all 0.2s;
+}
+
+.vital-pill:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    background-color: white;
+}
+
+.vital-pill .icon {
+    opacity: 0.8;
+}
+
+.vital-pill.pulse .icon {
+    color: var(--color-brand-red);
+}
+
+.vital-pill.speed .icon {
+    color: var(--color-brand-orange);
+}
+
+.vital-pill.pulse {
+    border-left: 3px solid var(--color-brand-red);
+}
+
+.vital-pill.speed {
+    border-left: 3px solid var(--color-brand-orange);
+}
+
+.pill-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.pill-content .label {
+    font-size: 0.55rem;
+    font-weight: 800;
+    color: var(--text-tertiary);
+    margin-bottom: 0px;
+}
+
+.pill-content .value {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1;
+}
+
+/* Removed vital-box-mini styles as they are replaced by vital-pill */
+
+.dispatch-btn {
+    background-color: var(--color-brand-green);
+    color: white;
+    font-weight: 700;
+    font-size: 0.8rem;
+    padding: 8px 20px;
+    border-radius: var(--radius-full);
+    letter-spacing: 0.5px;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 12px rgba(46, 125, 50, 0.2);
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.dispatch-btn:hover {
+    background-color: #1B5E20;
+    /* Darker green */
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(46, 125, 50, 0.3);
+}
+
+.dispatch-btn.dispatched {
+    background-color: #1a1a1a;
+    /* Dark gray for "Done" state */
+    cursor: default;
+    transform: none;
+    box-shadow: none;
+    opacity: 0.8;
+    animation: success-pop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes success-pop {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--space-4);
+    padding-top: var(--space-4);
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-item label {
+    font-size: 0.7rem;
+    color: var(--text-tertiary);
+    font-weight: 700;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.value-group .main-value {
+    display: block;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 2px;
+}
+
+.value-group .sub-value {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.highlight-green {
+    color: var(--color-brand-green) !important;
+}
+
+@media (max-width: 1024px) {
+    .dispatch-panel {
+        width: 95%;
+        max-width: 700px;
+        padding: var(--space-4) var(--space-4);
+        bottom: 16px;
+    }
+
+    .info-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-3);
+    }
+
+    .panel-header-row {
+        margin-bottom: var(--space-4);
+    }
+}
+
+@media (max-width: 768px) {
+    .dispatch-panel {
+        bottom: 0;
+        left: 0;
+        transform: none;
+        width: 100%;
+        max-width: none;
+        border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+        padding: var(--space-6) var(--space-4);
+        max-height: 60vh;
+        overflow-y: auto;
+    }
+
+    .panel-header-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .header-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .user-name-group {
+        border-right: none;
+        padding-right: 0;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .vitals-header-group {
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 8px;
+    }
+}

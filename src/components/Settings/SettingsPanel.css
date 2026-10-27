@@ -1,0 +1,139 @@
+.settings-panel {
+    padding: var(--space-8);
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    background-color: var(--bg-app);
+}
+
+.settings-panel .panel-header .header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-1);
+    gap: 12px;
+}
+
+.settings-panel .panel-header h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.settings-panel .panel-header p {
+    color: var(--text-secondary);
+    margin-bottom: var(--space-8);
+}
+
+.panel-close-btn {
+    background: transparent;
+    color: var(--text-tertiary);
+    border: 1px solid transparent;
+    border-radius: 8px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.panel-close-btn:hover {
+    background-color: var(--bg-panel-hover);
+    color: var(--text-primary);
+    border-color: var(--border-subtle);
+}
+
+.settings-sections {
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+}
+
+.settings-group h3 {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: var(--space-4);
+}
+
+.setting-item {
+    background-color: var(--bg-panel);
+    padding: var(--space-4);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: var(--shadow-sm);
+}
+
+.setting-info {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+}
+
+.setting-info svg {
+    color: var(--color-brand-blue);
+}
+
+.setting-title {
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.setting-desc {
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+.settings-action {
+    padding: 6px 16px;
+    border-radius: var(--radius-md);
+    font-size: 13px;
+    font-weight: 600;
+    background-color: var(--color-brand-blue);
+    color: white;
+    border: none;
+}
+
+.settings-action.secondary {
+    background-color: transparent;
+    border: 1px solid var(--color-brand-blue);
+    color: var(--color-brand-blue);
+}
+
+.toggle {
+    width: 44px;
+    height: 24px;
+    background-color: var(--text-tertiary);
+    border-radius: 12px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.toggle::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.2s;
+}
+
+.toggle.active {
+    background-color: var(--color-brand-green);
+}
+
+.toggle.active::before {
+    transform: translateX(20px);
+}

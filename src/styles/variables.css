@@ -1,0 +1,115 @@
+:root {
+    /* Indian Brand Colors */
+    --color-brand-green: #2E7D32;
+    /* Deep Ashoka Green */
+    --color-brand-orange: #FF9933;
+    /* Saffron */
+    --color-brand-red: #D32F2F;
+    --color-brand-blue: #1A237E;
+    /* Navy Blue like the Wheel */
+    --color-tower-marker: var(--color-brand-blue);
+
+    /* Backgrounds */
+    --bg-sidebar: #FFFFFF;
+    /* Light Sidebar for White Layout */
+    --bg-app: #F4F9F1;
+    /* Very Light Pistachio Background */
+    --bg-panel: #FFFFFF;
+    --bg-panel-hover: #EBF2E8;
+    --bg-modal: #FFFFFF;
+    --bg-tooltip: rgba(255, 255, 255, 0.95);
+    --color-pista-soft: #E9F5DB;
+    --color-pista-medium: #D1E1C4;
+    --color-pista-accent: #8EAC74;
+
+    /* Text */
+    --text-primary: #1C1C1E;
+    --text-secondary: #6B6B6B;
+    --text-tertiary: #A1A1A1;
+    --text-on-dark: #1C1C1E;
+    /* Changed to dark for light sidebar */
+    --nav-item-active-color: var(--color-brand-green);
+
+    --border-subtle: rgba(0, 0, 0, 0.08);
+    --divider-color: #F0F0F0;
+
+    /* Sidebar States */
+    --bg-sidebar-hover: rgba(0, 0, 0, 0.05);
+    --bg-sidebar-active: rgba(0, 0, 0, 0.1);
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-float: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+    /* Border Radius */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    --radius-full: 9999px;
+
+    /* Spacing */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-6: 24px;
+    --space-8: 32px;
+
+    /* Layout */
+    --sidebar-width-collapsed: 72px;
+    --sidebar-width-expanded: 320px;
+    --header-height: 64px;
+    --mobile-nav-height: 64px;
+
+    /* Breakpoints */
+    --breakpoint-mobile: 768px;
+    --breakpoint-tablet: 1024px;
+}
+
+[data-theme="dark"] {
+    /* Backgrounds Override */
+    --bg-app: #0A0A0B;
+    --bg-panel: #141417;
+    --bg-panel-hover: #1C1C1E;
+    --bg-sidebar: #050506;
+    --bg-modal: #1C1C1E;
+    --bg-tooltip: rgba(28, 28, 31, 0.95);
+
+    /* Text Override */
+    --text-primary: #F2F2F7;
+    --text-secondary: #AEAEB2;
+    --text-tertiary: #636366;
+
+    /* Borders & Semantic Override */
+    --border-subtle: rgba(255, 255, 255, 0.1);
+    --divider-color: #242429;
+
+    /* Shadows Override */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.5);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.6), 0 2px 4px -1px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.7), 0 4px 6px -2px rgba(0, 0, 0, 0.4);
+    --shadow-float: 0 20px 25px -5px rgba(0, 0, 0, 0.8), 0 10px 10px -5px rgba(0, 0, 0, 0.6);
+
+    /* Sidebar States Override */
+    --bg-sidebar-hover: rgba(255, 255, 255, 0.1);
+    --bg-sidebar-active: rgba(255, 255, 255, 0.2);
+    --nav-item-active-color: #FFFFFF;
+    --color-tower-marker: #FFFFFF;
+}
+/* Scaling for 7-inch displays and small laptops */
+@media (max-width: 1024px) or (max-height: 700px) {
+    :root {
+        --space-3: 10px;
+        --space-4: 12px;
+        --space-6: 18px;
+        --space-8: 24px;
+        
+        --sidebar-width-expanded: 260px;
+        --header-height: 56px;
+        --radius-lg: 10px;
+        --radius-xl: 16px;
+    }
+}

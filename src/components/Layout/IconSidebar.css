@@ -1,0 +1,165 @@
+.icon-sidebar {
+    width: var(--sidebar-width-collapsed);
+    height: 100vh;
+    background-color: var(--bg-sidebar);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-4) 0;
+    z-index: 50;
+    flex-shrink: 0;
+    border-right: 1px solid var(--divider-color);
+}
+
+.logo-container {
+    margin-bottom: var(--space-8);
+    display: flex;
+    justify-content: center;
+}
+
+.logo-icon {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Custom logo styling to match the asterisk/star in screenshot */
+.logo-icon svg {
+    color: transparent;
+    /* We rely on the container or svg fill */
+    fill: white;
+}
+
+.logo-star {
+    position: absolute;
+    color: white;
+    /* Always white inside the green octagon */
+    font-size: 24px;
+    font-weight: bold;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    width: 100%;
+    align-items: center;
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+    .nav-item {
+        width: 40px;
+        height: 40px;
+    }
+
+    .logo-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .logo-star {
+        font-size: 20px;
+    }
+}
+
+.nav-item {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background-color: transparent;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.nav-item:hover {
+    background-color: var(--bg-sidebar-hover);
+    color: var(--nav-item-active-color);
+    transform: scale(1.1) translateY(-2px);
+    filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.05));
+}
+
+.nav-item.active {
+    background-color: var(--bg-sidebar-active);
+    color: var(--nav-item-active-color);
+    transform: scale(1.05);
+}
+
+.has-badge .badge-dot {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    width: 8px;
+    height: 8px;
+    background-color: var(--color-brand-red);
+    border-radius: 50%;
+    border: 2px solid var(--bg-sidebar);
+}
+
+.sidebar-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    width: 100%;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .icon-sidebar {
+        width: 100%;
+        height: var(--mobile-nav-height);
+        flex-direction: row;
+        padding: 0 var(--space-4);
+        border-right: none;
+        border-top: 1px solid var(--divider-color);
+        box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .logo-container {
+        display: none;
+    }
+
+    .sidebar-nav {
+        flex-direction: row;
+        justify-content: space-around;
+        gap: 0;
+    }
+
+    .sidebar-bottom {
+        display: none;
+        /* Hide settings/avatar in bottom nav for cleanliness */
+    }
+
+    .nav-item {
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+        padding: 4px;
+        flex: 1;
+    }
+
+    .nav-item.active::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 20%;
+        right: 20%;
+        height: 3px;
+        background-color: var(--color-brand-green);
+        border-radius: 3px 3px 0 0;
+    }
+}

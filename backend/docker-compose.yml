@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  backend:
+    build: .
+    container_name: lifelink_backend
+    restart: always
+    ports:
+      - "8000:8000"
+    environment:
+      MONGODB_URL: ${MONGODB_URL}
+      MONGODB_NAME: ${MONGODB_NAME:-lifelink_sos}
+      DEVICE_API_KEY: ${DEVICE_API_KEY}
+      SECRET_KEY: ${SECRET_KEY}
+      CORS_ORIGINS: ${CORS_ORIGINS:-*}
